@@ -1,0 +1,39 @@
+[package]
+name = "client"
+description = "HTTP Load Generator Command Line Client and Web Service Agent"
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+
+[[bin]]
+name = "agent"
+
+[[bin]]
+name = "cli"
+
+[[bench]]
+name = "raw_vs_hyper"
+harness = false
+
+[dependencies]
+tokio = { workspace = true }
+anyhow = { workspace = true }
+hyper = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
+
+indicatif = "0.17.6"
+axum = "0.6.20"
+prometheus = "0.13.3"
+lazy_static = "1.4.0"
+tabled = "0.14.0"
+csv = "1.2.2"
+statrs = "0.16.0"
+ctrlc = "3.4.0"
+clap = { version = "4.3.19", features = ["derive", "env"] }
+serde = { version = "1.0.183", features = ["derive"] }
+
+common = { path = "../common" }
+
+[dev-dependencies]
+criterion = { version = "0.5.1", features = ["async_tokio"] }

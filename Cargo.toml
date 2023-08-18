@@ -1,0 +1,18 @@
+[workspace]
+members = ["client", "common"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["joshua"]
+
+[workspace.dependencies]
+tokio = { version = "1.29.1", features = ["full"] }
+anyhow = "1.0.72"
+async-trait = "0.1.72"
+hyper = { version = "0.14.27", features = ["full"] }
+log = "0.4.0"
+env_logger = "0.10.0"
+
+[profile.release]
+debug = true
